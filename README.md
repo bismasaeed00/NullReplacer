@@ -14,8 +14,12 @@ import like this in your project:
 ### How to use:
 
 ```
-NSArray *data=[result valueForKey:@"data"];
-data=[data arrayByReplacingNullsWithBlanks];
+NSDictionary *data=@{@"status":201,@"message":null};
+data=[data dictionaryByReplacingNullsWithBlanks];
 ```
+output will be
+```
+@{@"status":201,@"message":@""}
 
+```
 It will remove all Null objects and replace them with empty strings to avoid crashes in your app.
